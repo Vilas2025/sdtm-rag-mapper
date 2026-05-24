@@ -1,0 +1,46 @@
+{
+  "examples": [
+    {
+      "id": "ex_001",
+      "name": "Demographics CRF",
+      "description": "Subject demographics from baseline visit CRF",
+      "raw_variables": [
+        {"name": "patient_id", "sample_values": ["P-1001", "P-1002", "P-1003"], "description": "Unique patient identifier"},
+        {"name": "patient_age", "sample_values": ["54", "62", "47"], "description": "Patient age at consent"},
+        {"name": "gender", "sample_values": ["Male", "Female", "Male"], "description": "Patient biological sex"},
+        {"name": "race_category", "sample_values": ["White", "Black or African American", "Asian"], "description": "Self-reported race"},
+        {"name": "consent_dt", "sample_values": ["2024-03-15", "2024-03-18", "2024-03-22"], "description": "Date of informed consent"},
+        {"name": "site_number", "sample_values": ["101", "102", "101"], "description": "Investigator site number"},
+        {"name": "treatment_arm", "sample_values": ["Active 10mg", "Placebo", "Active 10mg"], "description": "Treatment arm assignment"}
+      ]
+    },
+    {
+      "id": "ex_002",
+      "name": "Adverse Event Log",
+      "description": "Adverse events reported during the study",
+      "raw_variables": [
+        {"name": "subject_no", "sample_values": ["P-1001", "P-1001", "P-1002"], "description": "Subject identifier"},
+        {"name": "ae_description", "sample_values": ["Headache, mild", "Nausea after dose", "Dizziness"], "description": "Verbatim AE as reported by investigator"},
+        {"name": "ae_start_date", "sample_values": ["2024-03-20", "2024-03-21", "2024-03-25"], "description": "AE onset date"},
+        {"name": "ae_end_date", "sample_values": ["2024-03-22", "2024-03-21", ""], "description": "AE resolution date"},
+        {"name": "severity_grade", "sample_values": ["Mild", "Moderate", "Mild"], "description": "Investigator severity assessment"},
+        {"name": "serious_yn", "sample_values": ["No", "No", "No"], "description": "Whether AE meets SAE criteria"},
+        {"name": "relation_to_drug", "sample_values": ["Possibly Related", "Probably Related", "Not Related"], "description": "Causality assessment"}
+      ]
+    },
+    {
+      "id": "ex_003",
+      "name": "Vital Signs Measurements",
+      "description": "Vital sign readings collected at each visit",
+      "raw_variables": [
+        {"name": "subj_id", "sample_values": ["P-1001", "P-1001", "P-1002"], "description": "Subject identifier"},
+        {"name": "visit_name", "sample_values": ["Baseline", "Week 2", "Baseline"], "description": "Study visit"},
+        {"name": "sys_bp", "sample_values": ["128", "124", "142"], "description": "Systolic blood pressure in mmHg"},
+        {"name": "dia_bp", "sample_values": ["82", "78", "91"], "description": "Diastolic blood pressure in mmHg"},
+        {"name": "heart_rate", "sample_values": ["72", "68", "85"], "description": "Pulse rate in beats per minute"},
+        {"name": "body_temp_f", "sample_values": ["98.6", "98.4", "99.1"], "description": "Body temperature in Fahrenheit"},
+        {"name": "measurement_date", "sample_values": ["2024-03-15", "2024-03-29", "2024-03-18"], "description": "Date of vital signs measurement"}
+      ]
+    }
+  ]
+}

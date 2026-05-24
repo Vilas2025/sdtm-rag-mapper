@@ -1,0 +1,135 @@
+{
+  "domains": [
+    {
+      "domain_code": "DM",
+      "domain_name": "Demographics",
+      "description": "Demographics domain contains essential demographic and administrative information about each subject. This is a required domain in every SDTM submission. One record per subject.",
+      "variables": [
+        {"name": "STUDYID", "label": "Study Identifier", "type": "Char", "role": "Identifier", "core": "Req"},
+        {"name": "DOMAIN", "label": "Domain Abbreviation", "type": "Char", "role": "Identifier", "core": "Req"},
+        {"name": "USUBJID", "label": "Unique Subject Identifier", "type": "Char", "role": "Identifier", "core": "Req"},
+        {"name": "SUBJID", "label": "Subject Identifier for the Study", "type": "Char", "role": "Topic", "core": "Req"},
+        {"name": "RFSTDTC", "label": "Subject Reference Start Date/Time", "type": "Char", "role": "Record Qualifier", "core": "Exp"},
+        {"name": "RFENDTC", "label": "Subject Reference End Date/Time", "type": "Char", "role": "Record Qualifier", "core": "Exp"},
+        {"name": "SITEID", "label": "Study Site Identifier", "type": "Char", "role": "Record Qualifier", "core": "Req"},
+        {"name": "AGE", "label": "Age", "type": "Num", "role": "Record Qualifier", "core": "Exp"},
+        {"name": "AGEU", "label": "Age Units", "type": "Char", "role": "Variable Qualifier", "core": "Exp"},
+        {"name": "SEX", "label": "Sex", "type": "Char", "role": "Record Qualifier", "core": "Req"},
+        {"name": "RACE", "label": "Race", "type": "Char", "role": "Record Qualifier", "core": "Exp"},
+        {"name": "ETHNIC", "label": "Ethnicity", "type": "Char", "role": "Record Qualifier", "core": "Perm"},
+        {"name": "ARM", "label": "Description of Planned Arm", "type": "Char", "role": "Record Qualifier", "core": "Exp"},
+        {"name": "ARMCD", "label": "Planned Arm Code", "type": "Char", "role": "Record Qualifier", "core": "Exp"},
+        {"name": "COUNTRY", "label": "Country", "type": "Char", "role": "Record Qualifier", "core": "Req"}
+      ],
+      "guidance": "DM is the parent domain for all subject-level information. Date variables use ISO 8601 character format (--DTC suffix). SEX uses controlled terminology: M, F, U, UNDIFFERENTIATED. AGE should be calculated as of RFSTDTC (informed consent date typically)."
+    },
+    {
+      "domain_code": "AE",
+      "domain_name": "Adverse Events",
+      "description": "Adverse Events domain captures information about adverse events experienced by subjects. Events class domain - one record per adverse event per subject.",
+      "variables": [
+        {"name": "STUDYID", "label": "Study Identifier", "type": "Char", "role": "Identifier", "core": "Req"},
+        {"name": "DOMAIN", "label": "Domain Abbreviation", "type": "Char", "role": "Identifier", "core": "Req"},
+        {"name": "USUBJID", "label": "Unique Subject Identifier", "type": "Char", "role": "Identifier", "core": "Req"},
+        {"name": "AESEQ", "label": "Sequence Number", "type": "Num", "role": "Identifier", "core": "Req"},
+        {"name": "AETERM", "label": "Reported Term for the Adverse Event", "type": "Char", "role": "Topic", "core": "Req"},
+        {"name": "AEDECOD", "label": "Dictionary-Derived Term", "type": "Char", "role": "Synonym Qualifier", "core": "Exp"},
+        {"name": "AEBODSYS", "label": "Body System or Organ Class", "type": "Char", "role": "Record Qualifier", "core": "Exp"},
+        {"name": "AESEV", "label": "Severity/Intensity", "type": "Char", "role": "Record Qualifier", "core": "Perm"},
+        {"name": "AESER", "label": "Serious Event", "type": "Char", "role": "Record Qualifier", "core": "Exp"},
+        {"name": "AEACN", "label": "Action Taken with Study Treatment", "type": "Char", "role": "Record Qualifier", "core": "Exp"},
+        {"name": "AEREL", "label": "Causality", "type": "Char", "role": "Record Qualifier", "core": "Exp"},
+        {"name": "AEOUT", "label": "Outcome of Adverse Event", "type": "Char", "role": "Record Qualifier", "core": "Exp"},
+        {"name": "AESTDTC", "label": "Start Date/Time of Adverse Event", "type": "Char", "role": "Timing", "core": "Exp"},
+        {"name": "AEENDTC", "label": "End Date/Time of Adverse Event", "type": "Char", "role": "Timing", "core": "Exp"}
+      ],
+      "guidance": "AETERM contains verbatim term as reported by investigator. AEDECOD is the MedDRA Preferred Term after coding. AESEV uses controlled terms MILD, MODERATE, SEVERE. AESER is Y/N. Map source variables describing what happened to AETERM (verbatim) and AEDECOD (coded)."
+    },
+    {
+      "domain_code": "VS",
+      "domain_name": "Vital Signs",
+      "description": "Vital Signs domain captures vital sign measurements. Findings class domain - one record per vital sign measurement per time point per visit per subject.",
+      "variables": [
+        {"name": "STUDYID", "label": "Study Identifier", "type": "Char", "role": "Identifier", "core": "Req"},
+        {"name": "DOMAIN", "label": "Domain Abbreviation", "type": "Char", "role": "Identifier", "core": "Req"},
+        {"name": "USUBJID", "label": "Unique Subject Identifier", "type": "Char", "role": "Identifier", "core": "Req"},
+        {"name": "VSSEQ", "label": "Sequence Number", "type": "Num", "role": "Identifier", "core": "Req"},
+        {"name": "VSTESTCD", "label": "Vital Signs Test Short Name", "type": "Char", "role": "Topic", "core": "Req"},
+        {"name": "VSTEST", "label": "Vital Signs Test Name", "type": "Char", "role": "Synonym Qualifier", "core": "Req"},
+        {"name": "VSORRES", "label": "Result or Finding in Original Units", "type": "Char", "role": "Result Qualifier", "core": "Exp"},
+        {"name": "VSORRESU", "label": "Original Units", "type": "Char", "role": "Variable Qualifier", "core": "Exp"},
+        {"name": "VSSTRESC", "label": "Character Result/Finding in Std Format", "type": "Char", "role": "Result Qualifier", "core": "Exp"},
+        {"name": "VSSTRESN", "label": "Numeric Result/Finding in Standard Units", "type": "Num", "role": "Result Qualifier", "core": "Exp"},
+        {"name": "VSSTRESU", "label": "Standard Units", "type": "Char", "role": "Variable Qualifier", "core": "Exp"},
+        {"name": "VISITNUM", "label": "Visit Number", "type": "Num", "role": "Timing", "core": "Exp"},
+        {"name": "VISIT", "label": "Visit Name", "type": "Char", "role": "Timing", "core": "Exp"},
+        {"name": "VSDTC", "label": "Date/Time of Measurements", "type": "Char", "role": "Timing", "core": "Exp"}
+      ],
+      "guidance": "VSTESTCD uses controlled terminology: SYSBP (Systolic Blood Pressure), DIABP (Diastolic Blood Pressure), PULSE, TEMP, RESP, HEIGHT, WEIGHT, BMI. VSORRES holds the original collected value. VSSTRESN holds the standardized numeric value. Map blood pressure source variables to VSTESTCD=SYSBP or DIABP with corresponding VSORRES values."
+    },
+    {
+      "domain_code": "LB",
+      "domain_name": "Laboratory Test Results",
+      "description": "Laboratory Test Results domain captures lab test data. Findings class domain - one record per lab test per time point per visit per subject.",
+      "variables": [
+        {"name": "STUDYID", "label": "Study Identifier", "type": "Char", "role": "Identifier", "core": "Req"},
+        {"name": "DOMAIN", "label": "Domain Abbreviation", "type": "Char", "role": "Identifier", "core": "Req"},
+        {"name": "USUBJID", "label": "Unique Subject Identifier", "type": "Char", "role": "Identifier", "core": "Req"},
+        {"name": "LBSEQ", "label": "Sequence Number", "type": "Num", "role": "Identifier", "core": "Req"},
+        {"name": "LBTESTCD", "label": "Lab Test or Examination Short Name", "type": "Char", "role": "Topic", "core": "Req"},
+        {"name": "LBTEST", "label": "Lab Test or Examination Name", "type": "Char", "role": "Synonym Qualifier", "core": "Req"},
+        {"name": "LBCAT", "label": "Category for Lab Test", "type": "Char", "role": "Grouping Qualifier", "core": "Exp"},
+        {"name": "LBORRES", "label": "Result or Finding in Original Units", "type": "Char", "role": "Result Qualifier", "core": "Exp"},
+        {"name": "LBORRESU", "label": "Original Units", "type": "Char", "role": "Variable Qualifier", "core": "Exp"},
+        {"name": "LBSTRESC", "label": "Character Result/Finding in Std Format", "type": "Char", "role": "Result Qualifier", "core": "Exp"},
+        {"name": "LBSTRESN", "label": "Numeric Result/Finding in Std Units", "type": "Num", "role": "Result Qualifier", "core": "Exp"},
+        {"name": "LBSTRESU", "label": "Standard Units", "type": "Char", "role": "Variable Qualifier", "core": "Exp"},
+        {"name": "LBNRIND", "label": "Reference Range Indicator", "type": "Char", "role": "Variable Qualifier", "core": "Perm"},
+        {"name": "VISITNUM", "label": "Visit Number", "type": "Num", "role": "Timing", "core": "Exp"},
+        {"name": "LBDTC", "label": "Date/Time of Specimen Collection", "type": "Char", "role": "Timing", "core": "Exp"}
+      ],
+      "guidance": "LBTESTCD uses controlled terminology. Common codes: HGB (Hemoglobin), HCT (Hematocrit), WBC, RBC, PLAT (Platelets), GLUC (Glucose), CREAT (Creatinine), ALT, AST. LBCAT groups tests into HEMATOLOGY, CHEMISTRY, URINALYSIS. Lab values like 'hemoglobin', 'hgb', 'hb' map to LBTESTCD=HGB."
+    },
+    {
+      "domain_code": "CM",
+      "domain_name": "Concomitant Medications",
+      "description": "Concomitant Medications domain captures medications taken concurrent with study treatment. Interventions class - one record per medication per subject.",
+      "variables": [
+        {"name": "STUDYID", "label": "Study Identifier", "type": "Char", "role": "Identifier", "core": "Req"},
+        {"name": "DOMAIN", "label": "Domain Abbreviation", "type": "Char", "role": "Identifier", "core": "Req"},
+        {"name": "USUBJID", "label": "Unique Subject Identifier", "type": "Char", "role": "Identifier", "core": "Req"},
+        {"name": "CMSEQ", "label": "Sequence Number", "type": "Num", "role": "Identifier", "core": "Req"},
+        {"name": "CMTRT", "label": "Reported Name of Drug, Med, or Therapy", "type": "Char", "role": "Topic", "core": "Req"},
+        {"name": "CMDECOD", "label": "Standardized Medication Name", "type": "Char", "role": "Synonym Qualifier", "core": "Perm"},
+        {"name": "CMINDC", "label": "Indication", "type": "Char", "role": "Record Qualifier", "core": "Perm"},
+        {"name": "CMDOSE", "label": "Dose per Administration", "type": "Num", "role": "Record Qualifier", "core": "Perm"},
+        {"name": "CMDOSU", "label": "Dose Units", "type": "Char", "role": "Variable Qualifier", "core": "Perm"},
+        {"name": "CMDOSFRQ", "label": "Dosing Frequency per Interval", "type": "Char", "role": "Variable Qualifier", "core": "Perm"},
+        {"name": "CMROUTE", "label": "Route of Administration", "type": "Char", "role": "Variable Qualifier", "core": "Perm"},
+        {"name": "CMSTDTC", "label": "Start Date/Time of Medication", "type": "Char", "role": "Timing", "core": "Exp"},
+        {"name": "CMENDTC", "label": "End Date/Time of Medication", "type": "Char", "role": "Timing", "core": "Exp"}
+      ],
+      "guidance": "CMTRT contains verbatim medication name as reported. CMDECOD is WHO Drug coded name. Source variables containing drug names, prescriptions, or medications map to CMTRT. Dose information goes to CMDOSE with units in CMDOSU."
+    },
+    {
+      "domain_code": "EX",
+      "domain_name": "Exposure",
+      "description": "Exposure domain captures study treatment administration. Interventions class - one record per constant-dosing interval per subject.",
+      "variables": [
+        {"name": "STUDYID", "label": "Study Identifier", "type": "Char", "role": "Identifier", "core": "Req"},
+        {"name": "DOMAIN", "label": "Domain Abbreviation", "type": "Char", "role": "Identifier", "core": "Req"},
+        {"name": "USUBJID", "label": "Unique Subject Identifier", "type": "Char", "role": "Identifier", "core": "Req"},
+        {"name": "EXSEQ", "label": "Sequence Number", "type": "Num", "role": "Identifier", "core": "Req"},
+        {"name": "EXTRT", "label": "Name of Treatment", "type": "Char", "role": "Topic", "core": "Req"},
+        {"name": "EXDOSE", "label": "Dose per Administration", "type": "Num", "role": "Record Qualifier", "core": "Exp"},
+        {"name": "EXDOSU", "label": "Dose Units", "type": "Char", "role": "Variable Qualifier", "core": "Exp"},
+        {"name": "EXDOSFRM", "label": "Dose Form", "type": "Char", "role": "Variable Qualifier", "core": "Perm"},
+        {"name": "EXDOSFRQ", "label": "Dosing Frequency per Interval", "type": "Char", "role": "Variable Qualifier", "core": "Exp"},
+        {"name": "EXROUTE", "label": "Route of Administration", "type": "Char", "role": "Variable Qualifier", "core": "Exp"},
+        {"name": "EXSTDTC", "label": "Start Date/Time of Treatment", "type": "Char", "role": "Timing", "core": "Req"},
+        {"name": "EXENDTC", "label": "End Date/Time of Treatment", "type": "Char", "role": "Timing", "core": "Exp"}
+      ],
+      "guidance": "EXTRT is the study drug name. EX is distinct from CM - EX is for protocol-specified study treatment, CM is for other medications. Dose-related source variables map to EXDOSE with units in EXDOSU."
+    }
+  ]
+}
