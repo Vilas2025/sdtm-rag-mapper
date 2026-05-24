@@ -589,14 +589,6 @@ Contributions welcome! Please:
 
 ---
 
-## 📧 Contact & Support
-
-- **Issues:** [GitHub Issues](https://github.com/yourusername/sdtm-rag/issues)
-- **Email:** your.email@example.com
-- **Documentation:** See [ARCHITECTURE.md](ARCHITECTURE.md) for detailed technical docs
-
----
-
 ## 🙏 Acknowledgments
 
 - **CDISC** for SDTM standards and documentation
