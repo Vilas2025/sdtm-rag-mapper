@@ -338,7 +338,16 @@ curl -X POST http://127.0.0.1:8001/map \
   }
 }
 ```
+## Screenshots
 
+### Application UI
+![Application UI](docs/screenshots/app-ui.png)
+
+### Health Endpoint
+![Health Endpoint](docs/screenshots/health-endpoint.png)
+
+### Mapping Result
+![Mapping Result](docs/screenshots/mapping-result.png)
 ### Example 2: Batch Mapping
 
 ```bash
